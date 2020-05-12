@@ -1,0 +1,17 @@
+from tkinter import *
+from time import sleep
+from PIL import ImageTk, Image
+
+game = Tk()
+game.title("vcnv")
+canvas = Canvas(master=game, width=600 , height=300, background="white")
+canvas.pack()
+rect =canvas.create_oval(200,200 , 30,30, fill="red", outline="black")
+text =canvas.create_text(200, 100, text="welcome game",fill="blue",font=('Times', 20))
+canvas.update()
+for i in range(0, 100):
+        sleep(0.1)
+        canvas.move(rect, 1, 1)
+        canvas.move(text, 1, -1)
+        canvas.update()                 
+game.mainloop()
